@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PaintingGroupWebApp.Data;
 using PaintingGroupWebApp.Models;
 
@@ -16,6 +17,11 @@ namespace PaintingGroupWebApp.Controllers
         {
             List<Meeting> meetings = _context.Meetings.ToList();
             return View(meetings);
+        }
+        public IActionResult Detail(int id)
+        {
+            Meeting meeting = _context.Meetings.Include(a => a.Address).FirstOrDefault(c => c.Id == id);
+            return View(meeting);
         }
     }
 }
