@@ -1,26 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PaintingGroupWebApp.Data;
+using PaintingGroupWebApp.Interfaces;
 using PaintingGroupWebApp.Models;
 
 namespace PaintingGroupWebApp.Controllers
 {
     public class MeetingController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IMeetingRepository _meetingRepository;
 
-        public MeetingController(ApplicationDbContext context)
+        public MeetingController(IMeetingRepository meetingRepository)
         {
-            _context = context;
+            _meetingRepository = meetingRepository;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<Meeting> meetings = _context.Meetings.ToList();
+            IEnumerable<Meeting> meetings = await _meetingRepository.GetAll();
             return View(meetings);
         }
-        public IActionResult Detail(int id)
+        public async Task<IActionResult> Detail(int id)
         {
-            Meeting meeting = _context.Meetings.Include(a => a.Address).FirstOrDefault(c => c.Id == id);
+            Meeting meeting = await _meetingRepository.GetByIdAsync(id); 
             return View(meeting);
         }
     }
