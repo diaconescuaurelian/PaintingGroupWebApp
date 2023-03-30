@@ -22,7 +22,7 @@ namespace PaintingGroupWebApp.Data
                         new Club()
                         {
                             Title = "Painting Club 1",
-                            Image = "https://drive.google.com/file/d/1RjPAsj6cFzfmrYQjxcdpQz7kg1uNmuLE/view",
+                            Image = "https://lh6.googleusercontent.com/l4ayDrnhCY8H2sxvfz9cMHqpa6nwpqvib_QBBQPQwMeuHcCmBv7O_iYLu2g80AQ_xUI=w1200-h630-p",
                             Description = "This is the description of the first club",
                             ClubCategory = ClubCategory.Beginner,
                             Address = new Address()
@@ -35,7 +35,7 @@ namespace PaintingGroupWebApp.Data
                         new Club()
                         {
                             Title = "Painting Club 2",
-                            Image = "https://drive.google.com/file/d/1RjPAsj6cFzfmrYQjxcdpQz7kg1uNmuLE/view",
+                            Image = "https://lh6.googleusercontent.com/l4ayDrnhCY8H2sxvfz9cMHqpa6nwpqvib_QBBQPQwMeuHcCmBv7O_iYLu2g80AQ_xUI=w1200-h630-p",
                             Description = "This is the description of the second club",
                             ClubCategory = ClubCategory.Intermediate,
                             Address = new Address()
@@ -48,7 +48,7 @@ namespace PaintingGroupWebApp.Data
                         new Club()
                         {
                             Title = "Painting Club 3",
-                            Image = "https://drive.google.com/file/d/1RjPAsj6cFzfmrYQjxcdpQz7kg1uNmuLE/view",
+                            Image = "https://lh6.googleusercontent.com/l4ayDrnhCY8H2sxvfz9cMHqpa6nwpqvib_QBBQPQwMeuHcCmBv7O_iYLu2g80AQ_xUI=w1200-h630-p",
                             Description = "This is the description of the third club",
                             ClubCategory = ClubCategory.Advanced,
                             Address = new Address()
@@ -61,7 +61,7 @@ namespace PaintingGroupWebApp.Data
                         new Club()
                         {
                             Title = "Painting Club 4",
-                            Image = "https://drive.google.com/file/d/1RjPAsj6cFzfmrYQjxcdpQz7kg1uNmuLE/view",
+                            Image = "https://lh6.googleusercontent.com/l4ayDrnhCY8H2sxvfz9cMHqpa6nwpqvib_QBBQPQwMeuHcCmBv7O_iYLu2g80AQ_xUI=w1200-h630-p",
                             Description = "This is the description of the forth club",
                             ClubCategory = ClubCategory.Pro,
                             Address = new Address()
@@ -82,7 +82,7 @@ namespace PaintingGroupWebApp.Data
                         new Meeting()
                         {
                             Title = "Meeting 1",
-                            Image = "https://drive.google.com/file/d/1RjPAsj6cFzfmrYQjxcdpQz7kg1uNmuLE/view",
+                            Image = "https://lh6.googleusercontent.com/l4ayDrnhCY8H2sxvfz9cMHqpa6nwpqvib_QBBQPQwMeuHcCmBv7O_iYLu2g80AQ_xUI=w1200-h630-p",
                             Description = "This is the description of the first race",
                             MeetingCategory = MeetingCategory.Portrait,
                             Address = new Address()
@@ -95,7 +95,7 @@ namespace PaintingGroupWebApp.Data
                         new Meeting()
                         {
                             Title = "Meeting 2",
-                            Image = "https://drive.google.com/file/d/1RjPAsj6cFzfmrYQjxcdpQz7kg1uNmuLE/view",
+                            Image = "https://lh6.googleusercontent.com/l4ayDrnhCY8H2sxvfz9cMHqpa6nwpqvib_QBBQPQwMeuHcCmBv7O_iYLu2g80AQ_xUI=w1200-h630-p",
                             Description = "This is the description of the first race",
                             MeetingCategory = MeetingCategory.Landcaping,
                             AddressId = 5,
