@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using PaintingGroupWebApp.Data;
 using PaintingGroupWebApp.Interfaces;
 using PaintingGroupWebApp.Models;
+using PaintingGroupWebApp.Repository;
 
 namespace PaintingGroupWebApp.Controllers
 {
@@ -23,6 +24,20 @@ namespace PaintingGroupWebApp.Controllers
         {
             Meeting meeting = await _meetingRepository.GetByIdAsync(id); 
             return View(meeting);
+        }
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(Meeting meeting)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(meeting);
+            }
+            _meetingRepository.Add(meeting);
+            return RedirectToAction("Index");
         }
     }
 }
