@@ -18,7 +18,7 @@ namespace PaintingGroupWebApp.Services
                 );
             _cloudinary = new Cloudinary( acc );
         }
-        public async Task<ImageUploadResult> AddPhotoAsyc(IFormFile file)
+        public async Task<ImageUploadResult> AddPhotoAsync(IFormFile file)
         {
             var uploadResult = new ImageUploadResult();
             if (file.Length > 0)
@@ -34,7 +34,7 @@ namespace PaintingGroupWebApp.Services
             return uploadResult;
         }
 
-        public async Task<DeletionResult> DeletePhotoAsyc(string publicId)
+        public async Task<DeletionResult> DeletePhotoAsync(string publicId)
         {
             var deleteParams = new DeletionParams(publicId);
             var result = await _cloudinary.DestroyAsync(deleteParams);

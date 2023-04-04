@@ -38,7 +38,7 @@ namespace PaintingGroupWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _photoService.AddPhotoAsyc(meetingVM.Image);
+                var result = await _photoService.AddPhotoAsync(meetingVM.Image);
                 var meeting = new Meeting
                 {
                     Title = meetingVM.Title,
