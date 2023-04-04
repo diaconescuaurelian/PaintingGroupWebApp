@@ -40,6 +40,10 @@ namespace PaintingGroupWebApp.Repository
         {
             return await _context.Meetings.Include(i => i.Address).FirstOrDefaultAsync(i => i.Id == id);
         }
+        public async Task<Meeting> GetByIdAsyncNoTracking(int id)
+        {
+            return await _context.Meetings.Include(i => i.Address).AsNoTracking().FirstOrDefaultAsync();
+        }
 
         public bool Save()
         {
