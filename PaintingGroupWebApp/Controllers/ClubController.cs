@@ -47,7 +47,8 @@ namespace PaintingGroupWebApp.Controllers
                         Street = clubVM.Address.Street,
                         City = clubVM.Address.City,
                         County= clubVM.Address.County,
-                    }
+                    },
+                    ClubCategory = clubVM.ClubCategory
                 };
                 _clubRepository.Add(club);
                 return RedirectToAction("Index");
@@ -107,6 +108,7 @@ namespace PaintingGroupWebApp.Controllers
                     Image = photoResult.Url.ToString(),
                     AddressId = clubVM.AddressId,
                     Address = clubVM.Address,
+                    ClubCategory = clubVM.ClubCategory
                 };
 
                 _clubRepository.Update(club);

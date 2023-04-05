@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PaintingGroupWebApp.Data;
+using PaintingGroupWebApp.Data.Enum;
 using PaintingGroupWebApp.Interfaces;
 using PaintingGroupWebApp.Models;
 using PaintingGroupWebApp.Repository;
@@ -49,7 +50,8 @@ namespace PaintingGroupWebApp.Controllers
                         Street = meetingVM.Address.Street,
                         City = meetingVM.Address.City,
                         County = meetingVM.Address.County,
-                    }
+                    },
+                    MeetingCategory = meetingVM.MeetingCategory
                 };
                 _meetingRepository.Add(meeting);
                 return RedirectToAction("Index");
@@ -62,16 +64,16 @@ namespace PaintingGroupWebApp.Controllers
         }
         public async Task<IActionResult> Edit(int id)
         {
-            var race = await _meetingRepository.GetByIdAsync(id);
-            if (race == null) return View("Error");
+            var meeting = await _meetingRepository.GetByIdAsync(id);
+            if (meeting == null) return View("Error");
             var clubVM = new EditMeetingViewModel
             {
-                Title = race.Title,
-                Description = race.Description,
-                AddressId = race.AddressId,
-                Address = race.Address,
-                URL = race.Image,
-                MeetingCategory = race.MeetingCategory
+                Title = meeting.Title,
+                Description = meeting.Description,
+                AddressId = meeting.AddressId,
+                Address = meeting.Address,
+                URL = meeting.Image,
+                MeetingCategory = meeting.MeetingCategory
             };
             return View(clubVM);
         }
@@ -109,6 +111,7 @@ namespace PaintingGroupWebApp.Controllers
                     Image = photoResult.Url.ToString(),
                     AddressId = meetingVM.AddressId,
                     Address = meetingVM.Address,
+                    MeetingCategory = meetingVM.MeetingCategory
                 };
 
                 _meetingRepository.Update(race);
