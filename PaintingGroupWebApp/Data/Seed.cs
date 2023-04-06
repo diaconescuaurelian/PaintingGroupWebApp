@@ -126,7 +126,7 @@ namespace PaintingGroupWebApp.Data
 
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
-                string adminUserEmail = "aurelian.diaconescu05@gmail.com";
+                string adminUserEmail = "aureliandiaconescu@gmail.com";
 
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
                 if (adminUser == null)
