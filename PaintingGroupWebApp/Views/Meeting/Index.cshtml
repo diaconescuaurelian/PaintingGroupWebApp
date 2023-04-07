@@ -21,6 +21,8 @@
                                     <a asp-controller="Meeting" asp-action="Detail" asp-route-id="@item.Id" type="button" class="btn btn-sm btn-outline-secondary">View</a>
                                     <a type="btn btn-success" asp-controller="Meeting" asp-action="Edit" asp-route-id="@item.Id"
                                    class="btn btn-sm btn-outline-secondary">Edit</a>
+                                       <a type="btn btn-success" asp-controller="Meeting" asp-action="Delete" asp-route-id="@item.Id"
+                                class="btn btn-sm btn-outline-secondary">Delete</a>
                                 </div>
                                 <small class="text-muted">@item.MeetingCategory</small>
                             </div>
