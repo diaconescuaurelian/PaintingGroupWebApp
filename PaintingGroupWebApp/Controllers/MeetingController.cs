@@ -14,11 +14,13 @@ namespace PaintingGroupWebApp.Controllers
     {
         private readonly IMeetingRepository _meetingRepository;
         private readonly IPhotoService _photoService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public MeetingController(IMeetingRepository meetingRepository, IPhotoService photoService)
+        public MeetingController(IMeetingRepository meetingRepository, IPhotoService photoService, IHttpContextAccessor httpContextAccessor)
         {
             _meetingRepository = meetingRepository;
             _photoService = photoService;
+            _httpContextAccessor = httpContextAccessor;
         }
         public async Task<IActionResult> Index()
         {
@@ -32,7 +34,9 @@ namespace PaintingGroupWebApp.Controllers
         }
         public IActionResult Create()
         {
-            return View();
+            var curUserID = _httpContextAccessor.HttpContext?.User.GetUserId();
+            var createMeetingViewModel = new CreateMeetingViewModel { AppUserId = curUserID };
+            return View(createMeetingViewModel);
         }
         [HttpPost]
         public async Task<IActionResult> Create(CreateMeetingViewModel meetingVM)
@@ -45,6 +49,7 @@ namespace PaintingGroupWebApp.Controllers
                     Title = meetingVM.Title,
                     Description = meetingVM.Description,
                     Image = result.Url.ToString(),
+                    AppUserId = meetingVM.AppUserId,
                     Address = new Address
                     {
                         Street = meetingVM.Address.Street,

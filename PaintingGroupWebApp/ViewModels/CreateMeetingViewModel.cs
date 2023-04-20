@@ -11,5 +11,6 @@ namespace PaintingGroupWebApp.ViewModels
         public Address Address { get; set; }
         public IFormFile Image { get; set; }
         public MeetingCategory MeetingCategory { get; set; }
+        public string AppUserId { get; set; }
     }
 }
