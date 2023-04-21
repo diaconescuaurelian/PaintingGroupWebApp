@@ -6,5 +6,6 @@
         public string UserName { get; set; }
         public string? FavouriteStyle { get; set; }
         public string? FavouriteMedium { get; set; }
+        public string ProfileImageUrl { get; set; }
     }
 }

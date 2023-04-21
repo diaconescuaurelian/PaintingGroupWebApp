@@ -24,6 +24,7 @@ namespace PaintingGroupWebApp.Controllers
                     UserName = user.UserName,
                     FavouriteStyle = user.FavouriteStyle,
                     FavouriteMedium = user.FavouriteMedium,
+                    ProfileImageUrl = user.ProfileImageUrl,
                 };
                 result.Add(userViewModel);
             }
